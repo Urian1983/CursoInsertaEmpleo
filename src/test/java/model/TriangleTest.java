@@ -2,15 +2,15 @@ package model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class TriangleTest {
 
     @Test
-    void shouldCalculateArea(){
-        Triangle testTriangle = new Triangle();
+    void testArea() {
+        Triangle triangle = new Triangle();
+        float result = triangle.area(5, 10);
 
-        assertEquals(12.5,testTriangle.area(5, 5));
+        assertThat(result).isEqualTo(25.0f);
     }
-
 }

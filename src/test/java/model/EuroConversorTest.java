@@ -2,24 +2,23 @@ package model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class EuroConversorTest {
 
-
     @Test
-    void euroToPesetasTest(){
+    void testEuroToPeseta() {
+        EuroConversor conversor = new EuroConversor();
+        double pesetas = conversor.euroToPeseta(1);
 
-        EuroConversor euroConversor = new EuroConversor();
-        Double result = euroConversor.euroToPeseta(1.0);
-        assertEquals(166.387,result);
+        assertThat(pesetas).isEqualTo(166.387);
     }
 
     @Test
-    void PesetasToEuroTest(){
-        EuroConversor euroConversor = new EuroConversor();
-        Double result = euroConversor.pesetaToEuro(166.387);
-        assertEquals(1, result);
-    }
+    void testPesetaToEuro() {
+        EuroConversor conversor = new EuroConversor();
+        double euros = conversor.pesetaToEuro(166.387);
 
+        assertThat(euros).isEqualTo(1.0);
+    }
 }

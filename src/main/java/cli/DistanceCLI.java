@@ -22,13 +22,13 @@ public class DistanceCLI {
     }
 
     public void calculateSpeed(){
-        System.out.println("Entra la distancia recorrida");
+        log.debug("Entra la distancia recorrida");
         int distance = sc.nextInt();
-        System.out.println("Entra el tiempo que ha tardado");
+        log.debug("Entra el tiempo que ha tardado");
         int hours = sc.nextInt();
 
         float speed = distanceCalculator.calculateSpeed(hours,distance);
-        System.out.println("La velocidad es " +speed);
+        log.debug("La velocidad es {}",speed);
 
     }
 }

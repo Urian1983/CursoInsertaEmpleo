@@ -2,15 +2,15 @@ package model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class DistanceCalculatorTest {
 
     @Test
-    void shouldCalulateDistance(){
-        DistanceCalculator distanceCalculatorTest = new DistanceCalculator(15,2);
+    void testCalculateSpeed() {
+        DistanceCalculator calculator = new DistanceCalculator();
+        float speed = calculator.calculateSpeed(2, 100);
 
-        assertEquals(7.5,7.5);
+        assertThat(speed).isEqualTo(50.0f);
     }
-
 }

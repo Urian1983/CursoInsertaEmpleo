@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Menu {
 
     boolean menuTrigger = true;
-    Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     private static final Logger log = LoggerFactory.getLogger(Menu.class);
 
     CircleCLI circleCLI = new CircleCLI(sc);
@@ -19,6 +19,7 @@ public class Menu {
     EuroConversorCLI euroConversor = new EuroConversorCLI(sc);
     PowerCalculatorCLI powerCalculator = new PowerCalculatorCLI(sc);
     TriangleCLI triangle = new TriangleCLI(sc);
+    TimeConversorCLI timeConversor = new TimeConversorCLI(sc);
 
     public void start() {
         while (menuTrigger) {
@@ -40,6 +41,7 @@ public class Menu {
                 8. Calcular el perimetro de un circulo.
                 9. Calcular la potencia de un circuito eléctrico.
                 10. Calcular porcentaje de descuento de un precio.
+                11. Convertir segundos en horas, minutos y segundos.,
                 0. Salir.
                 """;
 
@@ -61,6 +63,7 @@ public class Menu {
                 case 8 -> circleCLI.perimeter();
                 case 9 -> powerCalculator.powerCal();
                 case 10 -> discountCalculator.calculateDiscount();
+                case 11 -> timeConversor.conversor();
                 case 0 -> {
                     log.debug("¡Hasta luego!");
                     menuTrigger = false;
