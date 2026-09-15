@@ -22,15 +22,15 @@ public class DistanceUnitsConversorCLI {
 
     public void milesToKilometers(){
         log.debug("Entra el número de millas");
-        Double miles = sc.nextDouble();
-        Double kilometers = distanceUnitsConversor.milesToKilometers(miles);
+        float miles = sc.nextFloat();
+        float kilometers = distanceUnitsConversor.milesToKilometers(miles);
         log.debug("La cantidad de kilómetros para {} son {} kilómetros", miles, kilometers);
     }
 
     public void kilometerstoMiles(){
         log.debug("Entra el número de kilometros");
-        Double kilometers = sc.nextDouble();
-        Double miles = distanceUnitsConversor.kilometersToMiles(kilometers);
+        float kilometers = sc.nextFloat();
+        float miles = distanceUnitsConversor.kilometersToMiles(kilometers);
         log.debug("La cantidad de kilometros para {} son {} millas", kilometers, miles);
     }
 }

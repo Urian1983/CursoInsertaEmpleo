@@ -21,15 +21,15 @@ public class EuroConversorCLI {
 
     public void euroToPeseta(){
         log.debug("Escribe la cantidad de euros a convertir");
-        double euros = sc.nextDouble();
-        double pesetas = euroConversor.euroToPeseta(euros);
+        float euros = sc.nextFloat();
+        float pesetas = euroConversor.euroToPeseta(euros);
         log.debug("La cantidad de pesetas para {} es {} ", pesetas, euros);
     }
 
     public void pesetaToEuro(){
         log.debug("Escribe la cantidad de pesetas a convertir");
-        double pesetas = sc.nextDouble();
-        double euros = euroConversor.euroToPeseta(pesetas);
+        float pesetas = sc.nextFloat();
+        float euros = euroConversor.pesetaToEuro(pesetas);
         log.debug("La cantidad de euros para {} es {}", pesetas,euros);
     }
 

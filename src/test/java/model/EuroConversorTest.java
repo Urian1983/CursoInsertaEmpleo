@@ -9,16 +9,16 @@ class EuroConversorTest {
     @Test
     void testEuroToPeseta() {
         EuroConversor conversor = new EuroConversor();
-        double pesetas = conversor.euroToPeseta(1);
+        float pesetas = conversor.euroToPeseta(1);
 
-        assertThat(pesetas).isEqualTo(166.387);
+        assertThat(pesetas).isEqualTo(166.387f);
     }
 
     @Test
     void testPesetaToEuro() {
         EuroConversor conversor = new EuroConversor();
-        double euros = conversor.pesetaToEuro(166.387);
+        float euros = conversor.pesetaToEuro(166.387f);
 
-        assertThat(euros).isEqualTo(1.0);
+        assertThat(euros).isEqualTo(1.0f);
     }
 }

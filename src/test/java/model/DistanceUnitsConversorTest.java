@@ -9,16 +9,16 @@ class DistanceUnitsConversorTest {
     @Test
     void testMilesToKilometers() {
         DistanceUnitsConversor conversor = new DistanceUnitsConversor();
-        Double result = conversor.milesToKilometers(10.0);
+        float result = conversor.milesToKilometers(10.0f);
 
-        assertThat(result).isEqualTo(18.52);
+        assertThat(result).isEqualTo(18.52f);
     }
 
     @Test
     void testKilometersToMiles() {
         DistanceUnitsConversor conversor = new DistanceUnitsConversor();
-        Double result = conversor.kilometersToMiles(18.52);
+        float result = conversor.kilometersToMiles(18.52f);
 
-        assertThat(result).isEqualTo(10.0);
+        assertThat(result).isEqualTo(10.0f);
     }
 }

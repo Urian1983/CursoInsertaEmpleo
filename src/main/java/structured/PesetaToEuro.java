@@ -7,8 +7,8 @@ public class PesetaToEuro {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Escribe la cantidad de pesetas a convertir");
-        double pesetas= sc.nextDouble();
-        double euros = pesetas/166.387;
+        float pesetas= sc.nextFloat();
+        float euros = pesetas/166.387f;
         System.out.println("La cantidad de euros para " +pesetas +" pesetas es " +euros);
     }
 }

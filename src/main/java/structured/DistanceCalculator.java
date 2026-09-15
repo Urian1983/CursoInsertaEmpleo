@@ -11,7 +11,7 @@ public class DistanceCalculator {
         System.out.println("Entra el tiempo que ha tardado");
         int hours = sc.nextInt();
 
-        float speed = distance/hours;
+        float speed = (float) distance/hours;
 
         System.out.println("La velocidad media durante el recorrido es: " +speed);
     }

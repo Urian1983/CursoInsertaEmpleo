@@ -2,13 +2,13 @@ package model;
 
 public class DistanceUnitsConversor {
 
-    public double milesToKilometers (double miles){
-        return miles*1.852;
+    public float milesToKilometers (float miles){
+        return miles*1.852f;
     }
 
-    public double kilometersToMiles (Double kilometers){
+    public float kilometersToMiles (float kilometers){
 
-        return kilometers/1.852;
+        return kilometers/1.852f;
     }
 
 

@@ -2,12 +2,12 @@ package model;
 
 public class EuroConversor {
 
-    public double euroToPeseta (double euros){
-        return euros*166.387;
+    public float euroToPeseta (float euros){
+        return euros*166.387f;
     }
 
-    public double pesetaToEuro (double pesetas){
+    public float pesetaToEuro (float pesetas){
 
-        return pesetas/166.387;
+        return pesetas/166.387f;
     }
 }
