@@ -3,20 +3,12 @@ import static java.lang.Math.PI;
 
 public class Circle {
 
-    public Double area (Float radius ){
-        if(radius == null){
-            throw new IllegalArgumentException();
-        }
-        float powRadius = radius * radius;
+    public double area (int radius ){
+        int powRadius = radius * radius;
         return PI*powRadius;
-
     }
 
-    public Double perimeter (Float radius){
-        if(radius == null){
-            throw new IllegalArgumentException();
-        }
-
+    public double perimeter (int radius){
         return 2*PI*radius;
     }
 

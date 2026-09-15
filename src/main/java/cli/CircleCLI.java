@@ -23,16 +23,16 @@ public class CircleCLI {
 
     public void area (){
         log.debug("entra el radio del círculo");
-        Float radius = sc.nextFloat();
-        Double area = circle.area(radius);
-        log.debug("El área del círculo es: " + area);
+        int radius = sc.nextInt();
+        double area = circle.area(radius);
+        log.debug("El área del círculo es {}",area);
     }
 
     public void perimeter (){
         Circle circle = new Circle();
         log.debug("entra el radio del círculo");
-        Float radius = sc.nextFloat();
+        int radius = sc.nextInt();
         Double area = circle.perimeter(radius);
-        log.debug("El perimetro del círculo es: " + area);
+        log.debug("El perimetro del círculo es {}",area);
     }
 }

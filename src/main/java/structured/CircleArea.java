@@ -11,7 +11,7 @@ public class CircleArea {
         System.out.println("Entra el radio del círculo");
         int radius  = sc.nextInt();
         int powRadius = radius * radius;
-        double area = PI * powRadius * powRadius;
+        double area = PI * powRadius;
         System.out.println("el area del círculo es: " + area);
 
     }
