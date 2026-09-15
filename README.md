@@ -1,6 +1,15 @@
 # CursoJavaInsertaEmpleo
  
 Colección de 9 ejercicios de programación en Java. Cada ejercicio está implementado de dos formas diferentes.
+
+Las carpetas /model y /cli incluyen la versión orientada objetos, la cual:
+-usa logging.
+-test unitarios integrados.
+-seperación de funciones.
+
+La carpeta /structured incluye la versión en programación estructurada simple:
+-Una clase por ejercicio.
+-No hay metodos/funciones, esta todo integrado en el main.
  
 ## Contenido
  
