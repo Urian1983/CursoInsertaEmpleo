@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.urian1983</groupId>
@@ -16,7 +18,8 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- JUnit BOM -->
+
+            <!-- JUnit -->
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -25,7 +28,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- AssertJ BOM -->
+            <!-- AssertJ -->
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-bom</artifactId>
@@ -33,40 +36,211 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
-        <!-- Logging: Logback (incluye SLF4J) -->
+
+        <!-- Logging -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.5.16</version>
         </dependency>
 
-        <!-- JUnit5/6 (Jupiter) -->
+        <!-- Tests -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- AssertJ Core -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Maven Surefire Plugin -->
+
+            <!-- Compilación -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+            </plugin>
+
+            <!-- Tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
+
+            <!-- JAR principal -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Generación de los JAR de structured -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+
+                                <mkdir dir="${project.build.directory}/structured"/>
+
+                                <!-- CircleArea -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/CircleArea.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/CircleArea.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.CircleArea"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- CirclePerimeter -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/CirclePerimeter.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/CirclePerimeter.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.CirclePerimeter"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- DiscountCalculator -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/DiscountCalculator.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/DiscountCalculator.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.DiscountCalculator"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- DistanceCalculator -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/DistanceCalculator.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/DistanceCalculator.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.DistanceCalculator"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- EuroToPeseta -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/EuroToPeseta.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/EuroToPeseta.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.EuroToPeseta"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- KilometersToMiles -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/KilometersToMiles.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/KilometersToMiles.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.KilometersToMiles"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- MilesToKilometers -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/MilesToKilometers.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/MilesToKilometers.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.MilesToKilometers"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- PesetaToEuro -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/PesetaToEuro.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/PesetaToEuro.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.PesetaToEuro"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- PowerCalculator -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/PowerCalculator.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/PowerCalculator.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.PowerCalculator"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- TimeConversor -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/TimeConversor.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/TimeConversor.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.TimeConversor"/>
+                                    </manifest>
+                                </jar>
+
+                                <!-- Triangle -->
+                                <jar
+                                        destfile="${project.build.directory}/structured/Triangle.jar"
+                                        basedir="${project.build.outputDirectory}">
+                                    <include name="structured/Triangle.class"/>
+                                    <manifest>
+                                        <attribute name="Main-Class"
+                                                   value="structured.Triangle"/>
+                                    </manifest>
+                                </jar>
+
+                            </target>
+                        </configuration>
+
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
