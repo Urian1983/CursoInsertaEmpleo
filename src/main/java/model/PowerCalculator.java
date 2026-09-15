@@ -2,7 +2,7 @@ package model;
 
 public class PowerCalculator {
 
-    public int powerCal(int volt, int intensity){
+    public float powerCal(float volt, float intensity){
         return volt*intensity;
     }
 }

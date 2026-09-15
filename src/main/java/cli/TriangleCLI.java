@@ -23,9 +23,9 @@ public class TriangleCLI {
 
     public void area(){
         log.debug("Entra la base del triángulo");
-        int base = sc.nextInt();
+        float base = sc.nextFloat();
         log.debug("Entra la altura del triangulo");
-        int altura = sc.nextInt();
+        float altura = sc.nextFloat();
 
         float area = triangle.area(altura,base);
         log.debug("El area del triangulo es {}",area);

@@ -22,11 +22,11 @@ public class PowerCalculatorCLI {
 
     public void powerCal(){
         log.debug("Entra el voltaje");
-        int voltaje = sc.nextInt();
+        float voltaje = sc.nextFloat();
         log.debug("Entra la intensidad");
-        int intensidad = sc.nextInt();
+        float intensidad = sc.nextFloat();
 
-        int power= powerCalculator.powerCal(voltaje,intensidad);
+        float power= powerCalculator.powerCal(voltaje,intensidad);
 
         log.debug("La potencia es {}",power);
     }

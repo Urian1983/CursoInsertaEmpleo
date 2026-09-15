@@ -9,8 +9,8 @@ class PowerCalculatorTest {
     @Test
     void testPowerCal() {
         PowerCalculator calculator = new PowerCalculator();
-        int result = calculator.powerCal(10, 5);
+        float result = calculator.powerCal(10f, 5f);
 
-        assertThat(result).isEqualTo(50);
+        assertThat(result).isEqualTo(50f);
     }
 }

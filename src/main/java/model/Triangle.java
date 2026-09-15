@@ -2,8 +2,8 @@ package model;
 
 public class Triangle {
 
-    public float area(int height, int base) {
-        return (float) (base*height)/2;
+    public float area(float height, float base) {
+        return (base*height)/2;
 
     }
 }

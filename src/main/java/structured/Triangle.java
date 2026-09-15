@@ -7,11 +7,11 @@ public class Triangle {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Entra la base del triángulo");
-        int base = sc.nextInt();
+        float base = sc.nextFloat();
         System.out.println("Entra la altura del triangulo");
-        int altura = sc.nextInt();
+        float altura = sc.nextFloat();
 
-        float area = (float)(base*altura)/2;
+        float area = (base*altura)/2;
         System.out.println("El area del triangulo es " +area);
     }
 }
