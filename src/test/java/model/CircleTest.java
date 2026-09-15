@@ -9,7 +9,7 @@ class CircleTest {
     @Test
     void testArea() {
         Circle circle = new Circle();
-        Double result = circle.area(2);
+        Double result = circle.area(2f);
 
         assertThat(result).isEqualTo(12.566370614359172);
     }
@@ -17,7 +17,7 @@ class CircleTest {
     @Test
     void testPerimeter() {
         Circle circle = new Circle();
-        Double result = circle.perimeter(2);
+        Double result = circle.perimeter(2f);
 
         assertThat(result).isEqualTo(12.566370614359172);
 

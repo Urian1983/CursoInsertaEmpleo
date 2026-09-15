@@ -3,12 +3,11 @@ import static java.lang.Math.PI;
 
 public class Circle {
 
-    public double area (int radius ){
-        int powRadius = radius * radius;
+    public double area (Float radius){
+        Float powRadius = radius * radius;
         return PI*powRadius;
     }
-
-    public double perimeter (int radius){
+    public Double perimeter (Float radius){
         return 2*PI*radius;
     }
 

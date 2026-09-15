@@ -12,8 +12,9 @@ public class DiscountCalculator {
         System.out.println("Entra el precio descontado del producto");
         float discountPrice = sc.nextFloat();
 
-        float percentageDiscount = discountPrice*(100/originalPrice);
+        float percentageDiscountPrice = discountPrice*(100/originalPrice);
+        float percentageDiscount = originalPrice-percentageDiscountPrice;
 
-        System.out.println("El porcentaje de descuento es: " + percentageDiscount);
+        System.out.println("El porcentaje de descuento es: " + percentageDiscount + "%");
     }
 }

@@ -150,7 +150,7 @@
                                     <include name="structured/DistanceCalculator.class"/>
                                     <manifest>
                                         <attribute name="Main-Class"
-                                                   value="structured.DistanceCalculator"/>
+                                                   value="structured.SpeedCalculator"/>
                                     </manifest>
                                 </jar>
 
@@ -172,7 +172,7 @@
                                     <include name="structured/KilometersToMiles.class"/>
                                     <manifest>
                                         <attribute name="Main-Class"
-                                                   value="structured.KilometersToMiles"/>
+                                                   value="structured.MetersToMiles"/>
                                     </manifest>
                                 </jar>
 
@@ -183,7 +183,7 @@
                                     <include name="structured/MilesToKilometers.class"/>
                                     <manifest>
                                         <attribute name="Main-Class"
-                                                   value="structured.MilesToKilometers"/>
+                                                   value="structured.MilesToMeters"/>
                                     </manifest>
                                 </jar>
 

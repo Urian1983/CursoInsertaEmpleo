@@ -8,12 +8,12 @@ public class PowerCalculator {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Entra el voltaje");
-        float voltaje = sc.nextFloat();
+        float voltage = sc.nextFloat();
         System.out.println("Entra la intensidad");
-        float intensidad = sc.nextFloat();
+        float capacity = sc.nextFloat();
 
-        float power= voltaje*intensidad;
+        float power= voltage*capacity;
 
-        System.out.println("La potencia es " +power);
+        System.out.println("La potencia es " +power +" vatios");
     }
 }

@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class DistanceCalculatorTest {
+class SpeedCalculatorTest {
 
     @Test
     void testCalculateSpeed() {
-        DistanceCalculator calculator = new DistanceCalculator();
-        float speed = calculator.calculateSpeed(2, 100);
+        SpeedCalculator calculator = new SpeedCalculator();
+        float speed = calculator.calculateSpeed(2f, 100f);
 
         assertThat(speed).isEqualTo(50.0f);
     }

@@ -12,14 +12,14 @@ public class TimeConversor {
         this.hours=0;
     }
 
-    public void timeConversor(int secondsToConvert) {
-        int minutesToConvert = secondsToConvert / 60;
+    public void timeConversor(Integer secondsToConvert) {
+        Integer minutesToConvert = secondsToConvert / 60;
         this.seconds= this.seconds + (secondsToConvert % 60);
         this.minuteConversor(minutesToConvert);
 
     }
 
-    private void minuteConversor(int minutesToConvert) {
+    private void minuteConversor(Integer minutesToConvert) {
         this.hours = minutesToConvert/60;
         this.minutes = this.minutes + (minutesToConvert % 60);
     }

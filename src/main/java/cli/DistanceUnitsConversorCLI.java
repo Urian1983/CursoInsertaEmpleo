@@ -3,34 +3,48 @@ package cli;
 import model.DistanceUnitsConversor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.ReadFloat;
 
 import java.util.Scanner;
 
 public class DistanceUnitsConversorCLI {
     private final DistanceUnitsConversor distanceUnitsConversor;
-    private final Scanner sc;
+    private final ReadFloat readFloat;
     private static final Logger log = LoggerFactory.getLogger(DistanceUnitsConversorCLI.class);
 
-    public DistanceUnitsConversorCLI(Scanner sc, DistanceUnitsConversor distanceUnitsConversor) {
+    private DistanceUnitsConversorCLI(DistanceUnitsConversor distanceUnitsConversor,  ReadFloat readFloat) {
         this.distanceUnitsConversor = distanceUnitsConversor;
-        this.sc = sc;
+        this.readFloat = readFloat;
     }
 
     public DistanceUnitsConversorCLI(Scanner sc) {
-        this(sc,new DistanceUnitsConversor());
+        this(new DistanceUnitsConversor(),new ReadFloat(sc));
     }
 
-    public void milesToKilometers(){
-        log.debug("Entra el número de millas");
-        float miles = sc.nextFloat();
-        float kilometers = distanceUnitsConversor.milesToKilometers(miles);
-        log.debug("La cantidad de kilómetros para {} son {} kilómetros", miles, kilometers);
+    public void milesToMeters(){
+        Float miles = readFloat.getFloat("Introduce la cantidad de millas a convertir");
+        if(miles==null){
+            return;
+        }
+        if(miles<0){
+            log.error("El número de millas no puede ser negativo");
+        }
+
+        Float meters = distanceUnitsConversor.milesToMeters(miles);
+        log.debug("La cantidad de kilómetros para {} son {} kilómetros", miles, meters);
     }
 
-    public void kilometerstoMiles(){
-        log.debug("Entra el número de kilometros");
-        float kilometers = sc.nextFloat();
-        float miles = distanceUnitsConversor.kilometersToMiles(kilometers);
-        log.debug("La cantidad de kilometros para {} son {} millas", kilometers, miles);
+    public void meterstoMiles(){
+        Float meters = readFloat.getFloat("Introduce la cantidad de metros a convertir");
+        if(meters==null){
+            return;
+        }
+        if(meters<0){
+            log.error("El número de metros no puede ser negativo");
+        }
+
+        Float miles = distanceUnitsConversor.milesToMeters(meters);
+        log.debug("La cantidad de metros para {} son {} millas", meters, miles);
+
     }
 }

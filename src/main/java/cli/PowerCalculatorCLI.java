@@ -3,31 +3,37 @@ package cli;
 import model.PowerCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.ReadFloat;
 
 import java.util.Scanner;
 
 public class PowerCalculatorCLI {
-    private final Scanner sc;
     private final PowerCalculator powerCalculator;
+    private final ReadFloat readFloat;
     private static final Logger log = LoggerFactory.getLogger(PowerCalculatorCLI.class);
 
-    public PowerCalculatorCLI(Scanner sc, PowerCalculator powerCalculator) {
-        this.sc = sc;
+    public PowerCalculatorCLI(PowerCalculator powerCalculator,  ReadFloat readFloat) {
         this.powerCalculator = powerCalculator;
+        this.readFloat = readFloat;
     }
 
     public PowerCalculatorCLI(Scanner sc){
-        this(sc, new PowerCalculator());
+        this(new PowerCalculator(), new ReadFloat(sc));
     }
 
     public void powerCal(){
-        log.debug("Entra el voltaje");
-        float voltaje = sc.nextFloat();
-        log.debug("Entra la intensidad");
-        float intensidad = sc.nextFloat();
+        Float voltage = readFloat.getFloat("Introduce el voltaje");
+        if(voltage == null){
+            return;
+        }
 
-        float power= powerCalculator.powerCal(voltaje,intensidad);
+        Float capacity = readFloat.getFloat("Introduce la capacitacion");
+        if(capacity == null){
+            return;
+        }
 
-        log.debug("La potencia es {}",power);
+        float power= powerCalculator.powerCal(voltage,capacity);
+
+        log.debug("La potencia es {}",power +" vatios");
     }
 }

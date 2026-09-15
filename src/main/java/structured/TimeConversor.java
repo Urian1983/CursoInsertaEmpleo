@@ -14,11 +14,13 @@ public class TimeConversor {
         int secondsToConvert = sc.nextInt();
 
         int minutesToConvert = secondsToConvert / 60;
-        seconds=seconds+secondsToConvert % 60;
+        int carriedSeconds = secondsToConvert % 60;
+        seconds=seconds+carriedSeconds;
 
         hours = minutesToConvert / 60;
-        minutes=minutes+minutesToConvert % 60;
+        int carriedMinutes = minutesToConvert % 60;
+        minutes=minutes+carriedMinutes % 60;
 
-        System.out.println("El tiempo para " +seconds+" segundos es: " +hours+":"+minutes+":"+seconds);
+        System.out.println("El tiempo para " +secondsToConvert+" segundos es: " +hours+" horas "+minutes+" minutos "+seconds +" segundos");
     }
 }

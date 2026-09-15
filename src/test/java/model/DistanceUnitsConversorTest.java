@@ -7,17 +7,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 class DistanceUnitsConversorTest {
 
     @Test
-    void testMilesToKilometers() {
+    void testMilesToMeters() {
         DistanceUnitsConversor conversor = new DistanceUnitsConversor();
-        float result = conversor.milesToKilometers(10.0f);
+        float result = conversor.milesToMeters(10.0f);
 
-        assertThat(result).isEqualTo(18.52f);
+        assertThat(result).isEqualTo(18520f);
     }
 
     @Test
-    void testKilometersToMiles() {
+    void testMetersToMiles() {
         DistanceUnitsConversor conversor = new DistanceUnitsConversor();
-        float result = conversor.kilometersToMiles(18.52f);
+        float result = conversor.metersToMiles(18520f);
 
         assertThat(result).isEqualTo(10.0f);
     }

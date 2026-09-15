@@ -9,9 +9,9 @@ public class Triangle {
         System.out.println("Entra la base del triángulo");
         float base = sc.nextFloat();
         System.out.println("Entra la altura del triangulo");
-        float altura = sc.nextFloat();
+        float height = sc.nextFloat();
 
-        float area = (base*altura)/2;
+        float area = (base*height)/2;
         System.out.println("El area del triangulo es " +area);
     }
 }
