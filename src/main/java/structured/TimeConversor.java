@@ -21,6 +21,6 @@ public class TimeConversor {
         int carriedMinutes = minutesToConvert % 60;
         minutes=minutes+carriedMinutes % 60;
 
-        System.out.println("El tiempo para " +secondsToConvert+" segundos es: " +hours+" horas "+minutes+" minutos "+seconds +" segundos");
+        System.out.println("El tiempo para " +secondsToConvert+" segundos es: " +hours+" horas "+minutes+" minutos y" +seconds +" segundos");
     }
 }

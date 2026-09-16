@@ -10,8 +10,8 @@ public class CirclePerimeter {
         Scanner sc = new Scanner(System.in);
         System.out.println("Entra el radio del círculo");
         int radius  = sc.nextInt();
-        double perimeter = 2* PI * radius;
-        System.out.println("el area del círculo es: " + perimeter);
+        double perimeter = 2 * PI * radius;
+        System.out.println("el perimetro del círculo es: " + perimeter);
     }
 
 
