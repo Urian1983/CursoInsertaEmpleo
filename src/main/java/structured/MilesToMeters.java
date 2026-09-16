@@ -8,7 +8,7 @@ public class MilesToMeters {
         System.out.println("Entra el número de millas");
         float miles = sc.nextFloat();
         float meters = miles*1852f;
-        System.out.println("El numero de metros para " +miles +" es: " +meters);
+        System.out.println("El numero de metros para " +miles +" millas es: " +meters);
     }
     }
 
